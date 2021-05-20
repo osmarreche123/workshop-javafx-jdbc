@@ -9,7 +9,7 @@
    <children>
       <Label prefHeight="33.0" prefWidth="88.0" text="About">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font nome="System Bold" size="18.0" />
          </font>
          <VBox.margin>
             <Insets />
