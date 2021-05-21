@@ -1,21 +1,18 @@
-package model.entities;
+package models.entities;
+
 
 import java.util.Objects;
 
 public class Department {
 
     private Integer id;
-
-    private String nome;
-
-
-    public Department() {
+    private String name;
+    public Department(){
     }
 
-
-    public Department(Integer id, String nome) {
+    public Department(Integer id, String name) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
     }
 
     public Integer getId() {
@@ -26,12 +23,12 @@ public class Department {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -49,9 +46,11 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
+        return "Departament{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
+
+
 }
