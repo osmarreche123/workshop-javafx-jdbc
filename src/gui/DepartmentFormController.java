@@ -1,6 +1,7 @@
 package gui;
 
 import db.DbException;
+import gui.listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Constraints;
 import gui.util.Utils;
@@ -15,6 +16,8 @@ import models.entities.Department;
 import models.services.DepartmentService;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class DepartmentFormController implements Initializable {
@@ -23,6 +26,8 @@ public class DepartmentFormController implements Initializable {
     private Department entity;
 
     private DepartmentService service;
+
+    private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 
     @FXML
     private TextField textFieldId;
@@ -53,6 +58,7 @@ public class DepartmentFormController implements Initializable {
         try{
             entity = getFormData();
             service.saveOrUpdate(entity);
+            notifyDataChangeListeners();
             Utils.currentStage(event).close();
         }
         catch (DbException e){
@@ -62,6 +68,8 @@ public class DepartmentFormController implements Initializable {
 
 
     }
+
+
 
     @FXML
     public void onButtonCancelAction(ActionEvent action){
@@ -82,6 +90,16 @@ public class DepartmentFormController implements Initializable {
 
     public void setDepartmentService(DepartmentService service) {
         this.service = service;
+    }
+
+    public void subscribeDataChangeListeners(DataChangeListener listener){
+        dataChangeListeners.add(listener);
+    }
+
+    private void notifyDataChangeListeners() {
+        for (DataChangeListener listener : dataChangeListeners){
+            listener.onDataChanged();
+        }
     }
 
 
