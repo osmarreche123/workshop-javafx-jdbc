@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class ValidationException extends RuntimeException{
 
+
+    private static final long serialVersionUID = 1L;
+
     private Map<String, String> errors = new HashMap<>();
 
 

@@ -2,6 +2,7 @@ package models.dao.impl;
 
 import db.DB;
 import db.DbException;
+import db.DbIntegrityException;
 import models.dao.DepartmentDao;
 import models.dao.SellerDao;
 import models.entities.Department;
@@ -105,7 +106,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
                             }
 
         catch (SQLException e) {
-           throw new DbException(e.getMessage());
+           throw new DbIntegrityException(e.getMessage());
         }
 
         finally {
