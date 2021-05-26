@@ -33,6 +33,12 @@
             <Label text="Id" />
             <Label text="Name" GridPane.rowIndex="1" />
             <Label fx:id="labelErrorName" textFill="#fc0800" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldId" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="textFieldName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="textFieldBaseSalary" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxDepartment" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
                   <Button fx:id="buttonSave" mnemonicParsing="false" onAction="#onButtonSaveAction" text="Save">
@@ -46,19 +52,13 @@
                   <Insets top="5.0" />
                </GridPane.margin>
             </HBox>
-            <TextField fx:id="textFieldId" editable="false" GridPane.columnIndex="1" />
-            <TextField fx:id="textFieldName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Email" GridPane.rowIndex="2" />
             <Label text="BirthDate" GridPane.rowIndex="3" />
             <Label text="BaseSalary" GridPane.rowIndex="4" />
             <Label text="Department" GridPane.rowIndex="5" />
-            <TextField fx:id="textFieldEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="textFieldBaseSalary" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label fx:id="labelErrorEmail" textFill="#ee0404" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label fx:id="labelErrorBirthDate" textFill="#ee0404" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label fx:id="labelErrorBaseSalary" textFill="#ee0404" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <ComboBox fx:id="comboBoxDepartment" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </children>
